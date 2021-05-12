@@ -1,0 +1,434 @@
+$bg-clr-primary: #6b6b6b;
+$bg-clr-secondary: #EAEAEA;
+$bg-clr-primary-dark: #222831;
+$bg-clr-secondary-dark: #393e46;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background: $bg-clr-primary;
+}
+
+main {
+  height: 100vh;
+  overflow: hidden;
+}
+
+nav {
+  height: 100vh;
+  width: 15%;
+  min-width: 65px;
+  padding-top: 15%;
+}
+
+nav>* {
+  margin-top: 15%;
+}
+
+.clr-blue {
+  color: #0078F2;
+}
+
+.logo {
+  max-height: 60px;
+  width: 100%;
+}
+
+.switch-mode {
+  margin-bottom: 25px;
+  cursor: pointer;
+}
+
+.nav-link {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .fa {
+    font-size: 30px;
+  }
+}
+
+.btn-text {
+  font-size: 0.8rem;
+}
+
+.switch-container {
+  width: 100% !important;
+}
+
+.nav-pills .nav-link {
+  border-radius: 50px 0% 0% 50px;
+
+  &:hover,
+  &:active {
+    color: #fff;
+  }
+
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  color: #000;
+  background-color: #EAEAEA;
+}
+
+.main-content {
+  background: #EAEAEA;
+  height: 93vh;
+  margin-right: 1rem;
+  border-radius: 50px;
+}
+
+.tab-content {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 85%;
+  color: #3C3C3C;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #8383837c;
+  }
+}
+
+.project-items {
+  img {
+    border-radius: 25px;
+  }
+}
+
+.card-img-overlay {
+  background: rgba(18, 18, 18, 0.73);
+  mix-blend-mode: normal;
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  border-radius: 24px;
+  text-decoration: none;
+  transition: 0.4s;
+  opacity: 0;
+
+  &:link,
+  &:visited {
+    color: white;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.home-lines {
+  max-width: 200px;
+  width: 100px;
+}
+
+.info-sub,
+.learn-text {
+  font-size: 1.3rem;
+  color: #3C3C3C;
+}
+
+.about-sub {
+  font-size: 1.1rem;
+}
+
+.info-title {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.info-sub {
+  color: #3C3C3C;
+}
+
+.btn {
+  -webkit-filter: drop-shadow(-3px 4px 4px rgba(140, 140, 140, 0.25));
+  filter: drop-shadow(-3px 4px 4px rgba(140, 140, 140, 0.25));
+  border-radius: 40px;
+}
+
+.btn-primary {
+  background: #0078F2;
+}
+
+.btn-about {
+  width: 120px;
+  height: 40px;
+}
+
+.dp-container img {
+  max-height: 300px;
+  margin: 10% auto;
+  -webkit-filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 25px;
+}
+
+.social-icons .fa {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  color: #399cff;
+  transition: 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    color: rgb(133, 133, 133);
+  }
+}
+
+// Small devices (portrait phones, 576px and up)
+@media (min-width: 576px) {
+
+  nav {
+    width: 20%;
+    padding-top: 8%;
+  }
+
+  .btn-text {
+    font-size: 1rem;
+  }
+
+  .info-sub,
+  .learn-text {
+    font-size: 1.5rem;
+  }
+
+  .info-title {
+    font-size: 1.8rem;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+  }
+
+  .card-text {
+    font-size: 1.4rem;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+  nav {
+    padding-top: 15%;
+  }
+
+  .btn-text {
+    font-size: 1rem;
+  }
+
+  .about-sub {
+    font-size: 1.2rem;
+  }
+
+  .info-title {
+    font-size: 1.9rem;
+  }
+
+  .nav-link {
+    flex-direction: row;
+
+    .fa {
+      font-size: 1.5rem;
+    }
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .card-text {
+    font-size: 1.2rem;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+  nav {
+    padding-top: 10%;
+  }
+
+  .home-lines {
+    width: 130px;
+  }
+
+  .nav-link .fa {
+    font-size: 1.8rem;
+  }
+
+  .btn-text {
+    font-size: 1.3rem;
+  }
+
+  .info-sub,
+  .learn-text {
+    font-size: 1.7rem;
+  }
+
+  .about-sub {
+    font-size: 1.4rem;
+  }
+
+  .info-title {
+    font-size: 2rem;
+  }
+
+  .social-icons .fa {
+    font-size: 2rem;
+  }
+
+  .card-title {
+    font-size: 1.6rem;
+  }
+
+  .card-text {
+    font-size: 1.4rem;
+  }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .dp-container img {
+    max-height: 450px;
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+  .btn-text {
+    font-size: 1.8rem;
+  }
+
+  .info-sub,
+  .learn-text {
+    font-size: 2rem;
+  }
+
+  .about-sub {
+    font-size: 1.8rem;
+  }
+
+  .info-title {
+    font-size: 2.4rem;
+  }
+
+  .dp-container img {
+    max-height: 500px;
+  }
+}
+
+// EXX-Large devices (larger desktops, 1800px and up)
+@media (min-width: 1800px) {
+  .main-content {
+    margin-right: 2rem;
+  }
+
+  .tab-content {
+    margin-top: 6rem !important;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  nav {
+    padding-top: 5%;
+  }
+
+  .nav-link {
+    span {
+      font-size: 1.8rem;
+    }
+
+    .fa {
+      font-size: 2.5rem;
+    }
+  }
+
+  .logo {
+    max-height: 100px;
+  }
+
+  .switch-mode {
+    height: 50px;
+  }
+
+  .card-title {
+    font-size: 1.8rem;
+  }
+
+  .card-text {
+    font-size: 1.6rem;
+  }
+}
+
+// Small devices (Landscape phones, 435px and down)
+@media (max-height: 435px) {
+  .tab-content {
+    height: 80%;
+  }
+
+  nav {
+    padding-top: 0;
+
+    &>* {
+      margin-top: 1%;
+    }
+  }
+
+  .switch-mode {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  .nav-link .fa {
+    font-size: 18px;
+  }
+
+  .nav-link {
+    padding: 0;
+  }
+
+  .logo {
+    max-height: 40px;
+  }
+}
+
+// Dark Mode
+body.dark {
+  background: $bg-clr-primary-dark;
+
+  .info-container {
+    transition: 0.2s;
+    color: #fff;
+
+    .info-sub,
+    .learn-text {
+      transition: 0.2s;
+      color: rgba(255, 255, 255, 0.81);
+    }
+  }
+
+  .nav-pills .nav-link.active,
+  .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: $bg-clr-secondary-dark;
+  }
+
+  .main-content {
+    background-color: $bg-clr-secondary-dark;
+  }
+}
