@@ -18,9 +18,6 @@
         "key": "Cache-Control",
         "value": "max-age=86400"
       }, {
-        "key": "Content-Encoding",
-        "value": "none"
-      }, {
         "key": "X-Content-Type-Options",
         "value": "nosniff"
       }]
