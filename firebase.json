@@ -4,7 +4,24 @@
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
-    ]
+      "**/node_modules/**",
+      "index.unminified.html",
+      "README.md",
+      ".gitignore"
+    ],
+    "cleanUrls": true,
+    "headers": [  {
+      "source": "**/*.@(jpg|jpeg|gif|png|webp)",
+      "headers": [ {
+        "key": "Cache-Control",
+        "value": "max-age=86400"
+      } ]
+    }, {
+      "source": "404.html",
+      "headers": [ {
+        "key": "Cache-Control",
+        "value": "max-age=8640"
+      } ]
+    } ]
   }
 }
