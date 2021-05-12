@@ -11,13 +11,56 @@ $(document).ready(function () {
   } else {
     disableDark();
   };
-  var typed = new Typed('.element', {
-    strings: ["HTML5/CSS3", "JavaScript", "jQuery", "Bootstrap", "jQuery Animations", "SASS/SCSS", "Firebase"],
-    typeSpeed: 25,
-    loop: true,
-    backDelay: 1200,
-    backSpeed: 40,
+
+  //setup colour change
+  $('.text-fader .text-content .colour').each(function () {
+    var textSplit = $(this).text().split('');
+    var returnHTML = '';
+    $.each(textSplit, function (intIndex, objValue) {
+      returnHTML += '<span class="letter">' + objValue + '</span>';
+    });
+    $(this).html(returnHTML);
   });
+
+  $(".text-fader .text-content:first-child").addClass("in");
+  var textFaderDelay = 2000;
+  var textFaderAnimationSpeed = 500;
+  var colourChangeDelay = 500;
+
+  function nextText($current) {
+    if ($current.next(".text-fader .text-content").length > 0) {
+      var hasNext = true;
+    } else {
+      var hasNext = false;
+    }
+
+    setTimeout(function () {
+      $current.find('.colour').addClass('go');
+    }, colourChangeDelay);
+
+    setTimeout(function () {
+      $current.removeClass("in").addClass("out");
+      setTimeout(function () {
+        $current.find('.colour').removeClass('go');
+        $current.removeClass("out");
+        if (hasNext) {
+          $current.next(".text-fader .text-content").addClass("in");
+        } else {
+          $(".text-fader .text-content:first-child").addClass("in");
+        }
+        nextText($(".text-fader .text-content.in"));
+      }, textFaderAnimationSpeed);
+    }, textFaderDelay);
+  }
+  nextText($(".text-fader .text-content.in"));
+
+  // var typed = new Typed('.element', {
+  //   strings: ["HTML5/CSS3", "JavaScript", "jQuery", "Bootstrap", "jQuery Animations", "SASS/SCSS", "Firebase"],
+  //   typeSpeed: 25,
+  //   loop: true,
+  //   backDelay: 1200,
+  //   backSpeed: 40,
+  // });
 
 
   $('.btn-about').click(e => {

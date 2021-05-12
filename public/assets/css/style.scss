@@ -2,6 +2,7 @@ $bg-clr-primary: #6b6b6b;
 $bg-clr-secondary: #EAEAEA;
 $bg-clr-primary-dark: #222831;
 $bg-clr-secondary-dark: #393e46;
+$txt-clr-gray: #3C3C3C;
 
 * {
   box-sizing: border-box;
@@ -92,7 +93,7 @@ nav>* {
   overflow-x: hidden;
   overflow-y: auto;
   height: 85%;
-  color: #3C3C3C;
+  color: $txt-clr-gray;
 
   &::-webkit-scrollbar {
     width: 6px;
@@ -131,6 +132,109 @@ nav>* {
   }
 }
 
+.text-fader{
+  .text-content{
+    color:$txt-clr-gray;
+    
+    span{
+      &.line{
+        opacity:0;
+        -webkit-animation-fill-mode: forwards;
+                animation-fill-mode: forwards;
+        -webkit-animation-timing-function: ease;
+                animation-timing-function: ease;
+        -webkit-animation-duration: 0.8s;
+                animation-duration: 0.8s;
+        display:none;
+      }
+      &.colour{
+        .letter{
+          color:$txt-clr-gray;
+          transition:all 0.2s ease;
+        }
+      }
+    }
+    
+    &.in{
+      span{
+        &.line{
+          -webkit-animation-name: textFaderIn;
+                  animation-name: textFaderIn;
+          display:block;
+        }
+        
+        &.colour{
+          &.go{
+            .letter{
+              color:#0078F2;
+              @for $i from 1 through 30 {
+                &:nth-child(#{$i}) {
+                  transition-delay: (0.07*$i)+s;
+                  
+                }
+              }
+            }
+          }
+        }
+        
+      }
+    }
+    &.out{
+      span{
+        &.line{
+          -webkit-animation-name: textFaderOut;
+                  animation-name: textFaderOut;
+          display:block;
+        }
+      }
+    }
+  }
+}
+
+@-webkit-keyframes textFaderIn {
+  from{
+    opacity:0;
+    transform:translateY(25%);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes textFaderIn {
+  from{
+    opacity:0;
+    transform:translateY(25%);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@-webkit-keyframes textFaderOut {
+  from{
+    opacity:1;
+    transform:translateY(0);
+  }
+  to{
+    opacity:0;
+    transform:translateY(-25%);
+  }
+}
+
+@keyframes textFaderOut {
+  from{
+    opacity:1;
+    transform:translateY(0);
+  }
+  to{
+    opacity:0;
+    transform:translateY(-25%);
+  }
+}
+
 .home-lines {
   max-width: 200px;
   width: 100px;
@@ -139,7 +243,7 @@ nav>* {
 .info-sub,
 .learn-text {
   font-size: 1.3rem;
-  color: #3C3C3C;
+  color: $txt-clr-gray;
 }
 
 .about-sub {
@@ -152,7 +256,7 @@ nav>* {
 }
 
 .info-sub {
-  color: #3C3C3C;
+  color: $txt-clr-gray;
 }
 
 .btn {
@@ -410,6 +514,17 @@ nav>* {
 // Dark Mode
 body.dark {
   background: $bg-clr-primary-dark;
+  .text-fader{
+    .text-content{
+      color: #fff;
+    
+      span.colour{
+          .letter{
+            color:#fff;
+          }
+        }
+      }
+    }
 
   .info-container {
     transition: 0.2s;

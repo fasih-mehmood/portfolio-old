@@ -10,21 +10,27 @@
       ".gitignore"
     ],
     "cleanUrls": true,
-    "headers": [  {
-      "source": "**/*.@(jpg|jpeg|gif|png|webp)",
-      "headers": [ {
+    "headers": [{
+      "source": "**/*.@(jpg|jpeg|gif|png|webp|svg|js|css)",
+      "headers": [{
         "key": "Cache-Control",
         "value": "max-age=86400"
-      } ]
+      }, {
+        "key": "Content-Encoding",
+        "value": "none"
+      }, {
+        "key": "X-Content-Type-Options",
+        "value": "nosniff"
+      }]
     }, {
       "source": "404.html",
-      "headers": [ {
+      "headers": [{
         "key": "Cache-Control",
         "value": "max-age=8640"
-      } ]
+      }]
     }, {
-      "source": "**|*",
-      "headers": [ {
+      "source": "*",
+      "headers": [{
         "key": "X-Content-Type-Options",
         "value": "nosniff"
       }, {
@@ -33,7 +39,7 @@
       }, {
         "key": "X-XSS-Protection",
         "value": "1; mode=block"
-      } ]
-    } ]
+      }]
+    }]
   }
 }
