@@ -54,14 +54,6 @@ $(document).ready(function () {
   }
   nextText($(".text-fader .text-content.in"));
 
-  // var typed = new Typed('.element', {
-  //   strings: ["HTML5/CSS3", "JavaScript", "jQuery", "Bootstrap", "jQuery Animations", "SASS/SCSS", "Firebase"],
-  //   typeSpeed: 25,
-  //   loop: true,
-  //   backDelay: 1200,
-  //   backSpeed: 40,
-  // });
-
 
   $('.btn-about').click(e => {
     $('#v-pills-about-tab').click();

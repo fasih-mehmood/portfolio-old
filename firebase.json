@@ -7,7 +7,9 @@
       "**/node_modules/**",
       "index.unminified.html",
       "README.md",
-      ".gitignore"
+      ".gitignore",
+      "assets/css/*.scss",
+      "assets/js/script.js"
     ],
     "cleanUrls": true,
     "headers": [{
