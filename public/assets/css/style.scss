@@ -51,9 +51,49 @@ nav>* {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 
   .fa {
     font-size: 30px;
+  }
+
+  b {
+    transition: .15s ease-in-out;
+    position: absolute;
+    height: 20px;
+    width: 100%;
+    opacity: 0;
+    background: $bg-clr-secondary;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $bg-clr-primary;
+    }
+
+    &:nth-child(1) {
+      top: -20px;
+      &::before {
+        border-bottom-right-radius: 20px;
+      }
+    }
+
+    &:nth-child(2) {
+      bottom: -20px;
+      &::before {
+        border-top-right-radius: 20px;
+      }
+    }
+  }
+
+  &.active {
+    b {
+      opacity: 1;
+    }
   }
 }
 
@@ -132,59 +172,62 @@ nav>* {
   }
 }
 
-.text-fader{
-  .text-content{
-    color:$txt-clr-gray;
-    
-    span{
-      &.line{
-        opacity:0;
+.text-fader {
+  .text-content {
+    color: $txt-clr-gray;
+
+    span {
+      &.line {
+        opacity: 0;
         -webkit-animation-fill-mode: forwards;
-                animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
         -webkit-animation-timing-function: ease;
-                animation-timing-function: ease;
+        animation-timing-function: ease;
         -webkit-animation-duration: 0.8s;
-                animation-duration: 0.8s;
-        display:none;
+        animation-duration: 0.8s;
+        display: none;
       }
-      &.colour{
-        .letter{
-          color:$txt-clr-gray;
-          transition:all 0.2s ease;
+
+      &.colour {
+        .letter {
+          color: $txt-clr-gray;
+          transition: all 0.2s ease;
         }
       }
     }
-    
-    &.in{
-      span{
-        &.line{
+
+    &.in {
+      span {
+        &.line {
           -webkit-animation-name: textFaderIn;
-                  animation-name: textFaderIn;
-          display:block;
+          animation-name: textFaderIn;
+          display: block;
         }
-        
-        &.colour{
-          &.go{
-            .letter{
-              color:#0078F2;
+
+        &.colour {
+          &.go {
+            .letter {
+              color: #0078F2;
+
               @for $i from 1 through 30 {
                 &:nth-child(#{$i}) {
                   transition-delay: (0.07*$i)+s;
-                  
+
                 }
               }
             }
           }
         }
-        
+
       }
     }
-    &.out{
-      span{
-        &.line{
+
+    &.out {
+      span {
+        &.line {
           -webkit-animation-name: textFaderOut;
-                  animation-name: textFaderOut;
-          display:block;
+          animation-name: textFaderOut;
+          display: block;
         }
       }
     }
@@ -192,46 +235,50 @@ nav>* {
 }
 
 @-webkit-keyframes textFaderIn {
-  from{
-    opacity:0;
-    transform:translateY(25%);
+  from {
+    opacity: 0;
+    transform: translateY(25%);
   }
-  to{
-    opacity:1;
-    transform:translateY(0);
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes textFaderIn {
-  from{
-    opacity:0;
-    transform:translateY(25%);
+  from {
+    opacity: 0;
+    transform: translateY(25%);
   }
-  to{
-    opacity:1;
-    transform:translateY(0);
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @-webkit-keyframes textFaderOut {
-  from{
-    opacity:1;
-    transform:translateY(0);
+  from {
+    opacity: 1;
+    transform: translateY(0);
   }
-  to{
-    opacity:0;
-    transform:translateY(-25%);
+
+  to {
+    opacity: 0;
+    transform: translateY(-25%);
   }
 }
 
 @keyframes textFaderOut {
-  from{
-    opacity:1;
-    transform:translateY(0);
+  from {
+    opacity: 1;
+    transform: translateY(0);
   }
-  to{
-    opacity:0;
-    transform:translateY(-25%);
+
+  to {
+    opacity: 0;
+    transform: translateY(-25%);
   }
 }
 
@@ -514,17 +561,26 @@ nav>* {
 // Dark Mode
 body.dark {
   background: $bg-clr-primary-dark;
-  .text-fader{
-    .text-content{
+
+  .text-fader {
+    .text-content {
       color: #fff;
-    
-      span.colour{
-          .letter{
-            color:#fff;
-          }
+
+      span.colour {
+        .letter {
+          color: #fff;
         }
       }
     }
+  }
+
+  b {
+    background: $bg-clr-secondary-dark;
+
+    &::before {
+      background: $bg-clr-primary-dark;
+    }
+  }
 
   .info-container {
     transition: 0.2s;
