@@ -58,27 +58,26 @@ nav>* {
     font-size: 30px;
   }
 
-  &.active::before {
-    transition: .15s ease-in-out;
+  &.active {
+    &::before,
+    &::after {
     content: '';
     position: absolute;
-    top: -30px;
     right: 0;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     box-shadow: 15px 15px 0 $bg-clr-secondary;
+    transition: .15s ease-in-out;
+    }
+  }
+
+  &.active::before {
+    top: -30px;
   }
 
   &.active::after {
-    content: '';
-    position: absolute;
     bottom: -30px;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    box-shadow: 15px -15px 0 $bg-clr-secondary;
   }
 }
 

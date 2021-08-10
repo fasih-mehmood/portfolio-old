@@ -51,26 +51,21 @@ nav > * {
 .nav-link .fa {
   font-size: 30px;
 }
-.nav-link.active::before {
-  transition: 0.15s ease-in-out;
+.nav-link.active::before, .nav-link.active::after {
   content: "";
   position: absolute;
-  top: -30px;
   right: 0;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   box-shadow: 15px 15px 0 #EAEAEA;
+  transition: 0.15s ease-in-out;
+}
+.nav-link.active::before {
+  top: -30px;
 }
 .nav-link.active::after {
-  content: "";
-  position: absolute;
   bottom: -30px;
-  right: 0;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  box-shadow: 15px -15px 0 #EAEAEA;
 }
 
 .btn-text {
