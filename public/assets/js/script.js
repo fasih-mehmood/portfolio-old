@@ -85,4 +85,4 @@ $(document).ready(function () {
     const newColorScheme = e.matches ? enableDark() : disableDark();
     console.log(newColorScheme);
   });
-})
+});
