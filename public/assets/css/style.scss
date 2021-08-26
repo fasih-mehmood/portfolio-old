@@ -37,6 +37,19 @@ nav>* {
   color: $clr-primary;
 }
 
+.link-primary {
+  text-decoration: none;
+  transition: color 0.2s;
+  &:link,
+  &:visited {
+    color: $clr-primary;
+  }
+  &:hover, 
+  &:active {
+    color: #000980;
+  }
+}
+
 .logo {
   max-height: 60px;
   width: 100%;
@@ -548,6 +561,18 @@ body.dark {
 
   .clr-primary {
     color: $clr-primary-dark;
+  }
+  
+
+  .link-primary {
+    &:link,
+    &:visited {
+      color: $clr-primary-dark;
+    }
+    &:hover, 
+    &:active {
+      color: #705400;
+    }
   }
 
   .btn-primary {
