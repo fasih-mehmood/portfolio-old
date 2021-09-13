@@ -60,6 +60,11 @@ nav>* {
   cursor: pointer;
 }
 
+.nav {
+  flex-wrap: nowrap;
+  overflow-y: auto;
+}
+
 .nav-link {
   display: flex;
   width: 100%;
